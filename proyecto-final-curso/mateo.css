@@ -1,0 +1,34 @@
+* {
+    text-decoration: none;
+    transition: all 1.5s ease;
+    margin: 0;
+    cursor: default;
+}
+body{
+    background-color: black;
+    color: #ffffff22;
+}
+div {
+    font-size: 8em;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+p:hover{
+    color: #ffffffe2 ;
+}
+.p{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.327);
+    text-align: center;
+    margin-left: 45%;
+    cursor: pointer;
+}
+.p:hover{
+    color: white;
+}
+::selection  {
+    color: antiquewhite;
+    background-color: tomato;
+}

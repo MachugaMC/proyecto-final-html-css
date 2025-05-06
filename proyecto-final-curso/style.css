@@ -1,0 +1,365 @@
+/* font-family: "Frank Ruhl Libre", serif;
+font-family: "Inconsolata", monospace; */
+
+/* Normalizacion: */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;/*Esto mantiene el ancho y alto a pesar de padding y border*/
+    font-family: "Inconsolata", monospace;
+    list-style: none;/*sacando los puntos a las listas*/
+    text-decoration: none;/*Sin subrayado*/
+    color: white;
+}
+*::selection{
+    background-color: tomato;
+    color: antiquewhite;
+}
+
+body {
+    background-color: black; /*TO DO: borrar cuando tengamos el fondo final*/
+}
+
+header {
+    display: flex; /*Esto hara que los elementos se pongan en linea*/
+    align-items: center; /* Centra verticalmente*/
+    justify-content: space-between; /*hace que los elementos se separen*/
+    padding: 15px 3%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100; /*Que el header se muestre por encima de 0*/
+}
+
+.logo {
+    font-size:30px;
+    font-weight: 200; /*grueso de las letras*/
+    transition: all 1s ease-in-out; /*al poner la transicion aca, una vez que saco el mouse se va a hacer la transicion para que el hover se vyaa de a poco*/
+    animation: logo 20s ease infinite;
+}
+@keyframes logo {
+    0%{
+        font-weight: 200;
+    }
+    100%{
+        color: tomato;
+        font-weight: 700;
+    }
+}
+.logo:hover{
+    transform: scale(1.1) translatex(10px);
+}
+
+.navlist{
+    display: flex; /*para que los elementos esten en linea*/
+}
+
+.navlist a  { /*solo trbajamos en los 'a' de navlist*/
+    margin-left: 80px;
+    font-size: 15px;
+    font-weight: 100;
+    border-left: 1px solid transparent; /*subrayado transparente*/
+    border-right: 1px solid transparent;
+    padding: 0 5px 0 5px;
+    transition: all .5s ease; /* animando las caracteristicas del ".navlist a" */
+}
+
+.navlist a:hover{
+    border-left: 1px solid tomato;
+    border-right: 1px solid tomato;
+    color: tomato;
+    font-weight: 900;
+    border-radius: 3px;
+}
+
+#menu-icon{
+    display: none; /* para que no aparezca, a menos que este colapsada (chiquitita) la web */
+    font-size: 35px;
+    z-index: 101; /*por encima del header*/
+    cursor: pointer;
+    transition: all  .3s ease-in-out;
+}
+#menu-icon:hover{
+    color: tomato;
+}
+
+#menu-toggle{
+    display: none; /*nunca quiero que se vea el checkbox*/
+}
+.menu-icon-action{
+    display: none; /* para que no se le pueda hacer click */
+}
+.hero{ /*modificamos el section con class hero*/
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background:linear-gradient(245.59deg, black 0%, #0b0604 25%, #1c140e8d 75%, rgba(255, 99, 71, 0.249) 100%); /*fondo gradiente*/
+    position: relative;/*nos permite cambiar la ubicacion*/
+    display: grid; /*para columnas*/
+    grid-template-columns: 1fr 1fr; /*Hago tres columnas. Ya que esta el div que tiene el texto por un lado, y el div con la img del otro lado*/
+    align-items: center; /*alinea verticalmente el hero*/
+    gap: 2rem; /*espacio entre las columnas*/
+}
+section{
+    padding: 0 8%;
+}
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    transition: all .5s ease-in-out;
+    cursor: default;
+}
+.hero-text h5:hover {
+    text-shadow: 0 0 10px red,0 0 10px red,0 0 10px red,0 0 10px red;
+    }
+.hero-text h4{
+    color: beige;
+    transition: all .5s ease-in-out;
+}
+.hero-text h4:hover{
+    text-shadow: 0 0 10px red,0 0 10px red,0 0 10px red,0 0 10px red;
+}
+.hero-text h1{
+    font-family: "Frank Ruhl Libre", serif;
+    font-size: 40px;
+    line-height: 1;
+    margin: 0 0 30px 0;
+    transition: all .5s ease-in-out;
+}
+.hero-text h1:hover{
+    text-shadow: 0 0 10px tomato,0 0 10px tomato,0 0 10px tomato,0 0 10px tomato;
+    cursor: default;
+}
+.hero-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+    transition: all .4s ease-in-out;
+}
+.hero-text h3:hover {
+    text-shadow: 0 0 10px #ff4747, 0 0 10px #ff4747, 0 0 10px #ff4747, 0 0 10px #ff4747;
+}
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 2;
+    transition: all .3s ease-in;
+    cursor: default;
+}
+.hero-text p:hover {
+    text-shadow: 0 0 10px #ffed4e, 0 0 10px #ffed4e, 0 0 10px #ffed4e, 0 0 10px #ffed4e;
+}
+.hero-img img{
+    margin: 10% 0 0 10%;
+    width: 370px;
+    height: auto;
+    transition: all 5s linear; /*que la transicion sea lineal*/
+    border-radius: 20%;
+}
+.hero-img img:hover{
+    opacity: 0.7;
+    border-radius: 50%;
+    transform: scale(0.9);
+    width: 450px;
+}
+.hero-text>.a{
+    display: inline-block;
+    padding: 15px 30px;
+    line-height: 1.4;
+    transition: all .5s ease-in-out;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+.hero-text>.cv{
+    background-color: #4d4d4d;
+    border-right: 1px solid transparent;
+}
+.hero-text>.cv i{
+    margin-right: 3px;
+    vertical-align: middle;
+}
+.hero-text>.cv:hover {
+    background-color: transparent;
+    border-right: 1px solid white;
+    transform: translatex(3px);
+}
+.hero-text i{
+    transition: all .3s ease-in-out;
+    vertical-align: middle;
+}
+.hero-text>.cv i:hover{
+    color: tomato;
+}
+.hero-text>.vers i:hover{
+    color: green;
+}
+.hero-text>.vers{
+    background-color: transparent;
+    margin-left: 20px;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    border-left: 1px solid white;
+}
+.hero-text>.vers:hover{
+    background-color: transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    transform: translateX(3px);
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0  2px;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin-left:10px;
+    margin-top:150px;
+    font-size: 2.5rem;
+    transition: all 1s ease;
+    border: 1px solid transparent;
+    animation: fade 15s ease-in-out infinite;
+}
+.icons i:hover{
+    border-radius: 10px;
+    border-left: 1px solid tomato;
+    transform: scale(1.5) translate(7px, 2px);
+
+}
+@keyframes fade {
+    0%  {
+        color: tomato;
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        color: rgba(255, 99, 71, 0.768);
+    }
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 40px;
+    background-color: #4a4a4ae4;
+    border-radius: 100px;
+    transition: all .5s ease-in-out;
+}
+.scroll-down i:hover{
+    transform: translateY(3px);
+}
+/*hacemos responsive la web*/
+@media (max-width:992px) {
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-text p{
+        font-size: 70%;
+    }
+    .hero-img {
+        text-align: center;
+    }
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+    .icons {
+        display: none;
+    }
+    .scroll-down {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    h4 {
+        padding-bottom: 10px;
+    }
+    .menu-icon-action {
+        display: block;
+    }
+    #menu-icon{
+        display: block;
+    }
+    .hero-text {
+        padding-top: 100px;
+        text-align: center;
+        margin: auto;
+    }
+    .hero-img img{
+        margin: 0;
+        width: 300px;
+    }
+    .hero-img img:hover{
+        width: 270px;
+        border-radius: 10px;
+    }
+    .hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: rgba(28, 20, 14, 0.407);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .4s ease-in-out;
+    }
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+    #menu-toggle:checked + label.menu-icon-action +  ul {
+        right: 0;
+    }
+    .icons {
+        display: flex;
+        position:  absolute;
+        top: 90vh;
+        font-size: 10px;
+    }
+    .icons i  {
+        border: none;
+    }
+    .icons i:hover {
+        border-left: none;
+        transform: scale(1.1) translateX(1px);
+    }
+    .navlist a{
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid transparent;
+    }
+    .navlist a:hover {
+        border-bottom: 1px solid tomato;
+        border-right: none;
+        border-left: none;
+    }
+}
