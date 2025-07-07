@@ -18,19 +18,3 @@ scrollReveal.reveal('.hero-img', {delay: 300, origin: 'bottom'})
 scrollReveal.reveal('.icons', {delay: 180, origin: 'left'})
 scrollReveal.reveal('.scroll-down', {delay: 500, origin: 'top'})
 scrollReveal.reveal('.navlist', {delay: 200, origin: 'top'})
-
-const sDown = document.querySelector('.scroll-down')
-sDown.onclick = () => {
-    const namePrompt = prompt('Su nombre completo:')
-    const genero = confirm('¿Sos hombre?')
-    document.querySelector('img').remove()
-    if (!genero) {
-        document.querySelector('h5').innerHTML = 'Hija del Altisimo'
-        document.querySelector('h4').innerHTML = 'Salva por gracia❤️‍🔥'
-        
-    }
-    if (namePrompt) {
-        document.querySelector('h1').innerHTML = namePrompt;
-    }
-    
-}
